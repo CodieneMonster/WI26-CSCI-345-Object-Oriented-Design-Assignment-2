@@ -1,5 +1,7 @@
-# WI26-CSCI-345-Object-Oriented-Design-Assignment-2
-Implementing Deadwood Game
+CSCI 345–Assignment 2
+Implementation
+Dr. Moushumi Sharmin (in collaboration with: Dr. Aran Clauson)
+Points: [30+10] (10% + 5% of your overall course grade)
 This part of the assignment is asking you to implement! You analyzed the problem, designed a
 solution, now it is time to implement the design.
 Outcomes
