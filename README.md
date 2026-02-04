@@ -1,5 +1,5 @@
 # WI26-CSCI-345-Object-Oriented-Design-Assignment-2
-# WI26-CSCI-345-Object-Oriented-Design-Assignment-2
+
 
 ## Implementing Deadwood Game
 
@@ -28,6 +28,24 @@ Implement your Deadwood design as a console application. This version of your ga
 
 ### Required Tasks/Actions
 
+=======
+CSCI 345–Assignment 2
+Implementation
+Dr. Moushumi Sharmin (in collaboration with: Dr. Aran Clauson)
+Points: [30+10] (10% + 5% of your overall course grade)
+This part of the assignment is asking you to implement! You analyzed the problem, designed a
+solution, now it is time to implement the design.
+Outcomes
+Upon successful completion of this assignment, you will
+• Convert your software design into a working program
+• Demonstrate how the following class relationships are realized in Java
+• Association, Aggregation, Composition, Implementation, and Inheritance
+• Have a text-based (command-based) implementation of Deadwood
+Problem Statement
+Implement your Deadwood design as a console application. This version of your game is
+indented to be playable but may not be aesthetically pleasing. The point of the program is to
+verify that your design correctly models the game play logic. For example, players can only move
+to adjacent rooms and your program must enforce this restriction.
 The program MUST accommodate the following tasks/actions:
 
 **Player Management:**
