@@ -17,12 +17,24 @@ public abstract  class Role {
     public boolean isAvailable() {return occupiedBy == null;}
     public Player getOccupiedBy() {return occupiedBy;}
 
+        public boolean isPlayerQualified(Player p) {
+        if (p == null) return false;
+        return p.getRank() >= rankRequired;
+    }
+
+
     public void assign(Player player) {
         if (player == null) {throw new IllegalArgumentException("Player cannot be null");}
         if (!isAvailable()) {throw new IllegalStateException("Role is already occupied");}
-        // if (player.getRank() < rankRequired) {throw new IllegalArgumentException("Player rank too low for this role");}
+
         occupiedBy = player;
     }
 
     public void clear() {occupiedBy = null;}
+
+    @Override
+    public String toString() {
+        String occ = (occupiedBy == null) ? "available" : ("occupied by " + occupiedBy.getName());
+        return String.format("%s (rank %d, %s)", name, rankRequired, occ);
+    }
 }

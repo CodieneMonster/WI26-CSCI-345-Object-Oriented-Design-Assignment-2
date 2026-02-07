@@ -63,7 +63,7 @@ public class Player {
         if (destination == null) {throw new IllegalArgumentException("Destination location cannot be null.");}
         if (isWorking()) {throw new IllegalStateException("Cannot move while working on a role.");}
         if (location == null) {throw new IllegalStateException("Player has no current location");}
-        // isAdjecent is going to be implemented in the Location class, and will check if the destination is adjacent to the current location
+       
         if (!location.isAdjacent(destination)) {
             throw new IllegalArgumentException("Destination must be adjacent to current location.");
         }
@@ -79,7 +79,7 @@ public class Player {
         if (isWorking()) {throw new IllegalStateException("Cannot move while working on a role.");}
 
         if (location == null) {throw new IllegalStateException("Player has no current location.");}
-        // getNeighborByName will be implemented in the Location class, and will return the adjacent location with the given name, or null if no such location exists
+        
         Location destination = location.getNeighborByName(destinationName.trim());
         if (destination == null) {throw new IllegalArgumentException("No adjacent location found with the name: " + destinationName);}
 
@@ -90,12 +90,10 @@ public class Player {
     public void takeRole(Role r) {
         if (r == null) {throw new IllegalArgumentException("Role cannot be null.");}
         if (isWorking()) {throw new IllegalStateException("Player already working on a role.");}
-        // isAvailable and getRankRequired will be implemented in the Role class, and will check if the role is currently available
-        // and return the rank required for the role, respectively
+     
         if (!r.isAvailable()) {throw new IllegalStateException("Role is not available.");}
         if (rank < r.getRankRequired()) {throw new IllegalStateException("Player rank too low for this role.");}
 
-        // assign will be implemented in the Role class, and will mark the role as taken by this player and update any necessary state in the role
         r.assign(this);
         this.role = r;
         this.rehearsalChips = 0; // reset rehearsal chips when taking a new role
@@ -110,9 +108,6 @@ public class Player {
 
     public void rehearse() {
         if (!isWorking()) {throw new IllegalStateException("Player must be working on a role to rehearse.");}
-        // getBudget will be implemented in the Role class, and will return the budget of the role, which is the maximum number of rehearsal chips that can be earned for that role
-        // if (rehearsalChips >= role.getBudget() - 1) {throw new IllegalStateException("Cannot rehearse more than budget - 1 times.");}
-
         rehearsalChips++;
     }
 
