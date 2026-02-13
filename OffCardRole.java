@@ -4,7 +4,7 @@ public class OffCardRole extends Role {
     private final int failDollars;
     private final int failCredits;
     private final String line;
-    
+
     public OffCardRole(String name, int rankRequired,
                        int successDollars, int successCredits,
                        int failDollars, int failCredits,
@@ -34,18 +34,12 @@ public class OffCardRole extends Role {
     public int getFailCredits() { return failCredits; }
     public String getLine() { return line; }
 
-    /**
-     * Applies payout for a successful act for THIS off-card role.
-     */
     public void applySuccessPayout(Player p) {
         if (p == null) throw new IllegalArgumentException("Player cannot be null.");
         if (successDollars > 0) p.addDollars(successDollars);
         if (successCredits > 0) p.addCredits(successCredits);
     }
 
-    /**
-     * Applies payout for a failed act for THIS off-card role.
-     */
     public void applyFailPayout(Player p) {
         if (p == null) throw new IllegalArgumentException("Player cannot be null.");
         if (failDollars > 0) p.addDollars(failDollars);
@@ -54,8 +48,10 @@ public class OffCardRole extends Role {
 
     @Override
     public String toString() {
-        return super.toString() +
-                String.format(" [OffCard: success +$%d +%dcr, fail +$%d +%dcr]",
-                        successDollars, successCredits, failDollars, failCredits);
+        String base = super.toString();
+        String pay = String.format(" [OffCard: success +$%d +%dcr, fail +$%d +%dcr]",
+                successDollars, successCredits, failDollars, failCredits);
+        if (line.isEmpty()) return base + pay;
+        return base + pay + " | line: \"" + line + "\"";
     }
 }

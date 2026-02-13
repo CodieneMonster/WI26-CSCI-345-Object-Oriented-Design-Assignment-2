@@ -48,8 +48,10 @@ public class OnCardRole extends Role {
 
     @Override
     public String toString() {
-        return super.toString() +
-                String.format(" [OnCard: success +$%d +%dcr, fail +$%d +%dcr]",
-                        successDollars, successCredits, failDollars, failCredits);
+        String base = super.toString();
+        String pay = String.format(" [OnCard: success +$%d +%dcr, fail +$%d +%dcr]",
+                successDollars, successCredits, failDollars, failCredits);
+        if (line.isEmpty()) return base + pay;
+        return base + pay + " | line: \"" + line + "\"";
     }
 }
