@@ -145,6 +145,4 @@ public class Player {
         this.rehearsalChips = 0;
         this.location = trailers;
     }
-
-
 }

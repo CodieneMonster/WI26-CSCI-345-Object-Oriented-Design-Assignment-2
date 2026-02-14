@@ -22,11 +22,20 @@ public class Location {
     }
 
     public Location getNeighborByName(String neighborName) {
+        if (neighborName == null || neighborName.isBlank()) {
+            return null;
+        }
+
         for (Location loc : neighbors) {
             if (loc.getName().equalsIgnoreCase(neighborName)) {
                 return loc;
             }
         }
         return null; // not found
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 }

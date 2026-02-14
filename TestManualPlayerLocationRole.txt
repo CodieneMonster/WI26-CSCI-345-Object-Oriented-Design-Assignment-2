@@ -20,7 +20,7 @@ public class TestManualPlayerLocationRole {
     }
 
     // -------------------- Helper --------------------
-    private static void check(boolean condition, String testName) {
+    private static void check2(boolean condition, String testName) {
         testsRun++;
         if (condition) {
             testsPassed++;
